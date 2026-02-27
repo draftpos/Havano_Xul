@@ -247,3 +247,26 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+doc_events = {
+    "Fees Type": {
+        "after_insert": "school_management.fees_hooks.create_item"
+    },
+    "Student": {
+        "after_insert": "school_management.student_hooks.create_customer"
+    },
+    "Bulk Invoice Batch": {
+        "on_submit": "school_management.bulk_invoice.create_bulk_invoices"
+    },
+    "Student": {
+        "after_insert": "school_management.portaluser_provisioning.create_student_portal_user",
+"on_update": "school_management.portaluser_provisioning.create_student_portal_user",
+    },
+    "Parent": {
+        "after_insert": "school_management.portaluser_provisioning.create_parent_portal_user",
+"on_update": "school_management.portaluser_provisioning.create_parent_portal_user",
+    },
+}
+
+
+
+
