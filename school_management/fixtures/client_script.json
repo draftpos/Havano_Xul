@@ -1,0 +1,24 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Payment Entry",
+  "enabled": 1,
+  "modified": "2026-02-21 11:39:14.948414",
+  "module": "School Management",
+  "name": "Payment Entry - Populate Fees Type",
+  "script": "frappe.ui.form.on('Payment Entry', {\r\n    refresh(frm) {\r\n        // add a hook so whenever the references table changes, we populate Fees Type\r\n        frm.fields_dict.references.grid.wrapper.on('change', async function () {\r\n            await populate_fees_type(frm);\r\n        });\r\n    },\r\n\r\n    // also run after fetching outstanding invoices (button populates rows)\r\n    get_outstanding_invoices(frm) {\r\n        setTimeout(() => populate_fees_type(frm), 800);\r\n    }\r\n});\r\n\r\nasync function populate_fees_type(frm) {\r\n    let rows = frm.doc.references || [];\r\n\r\n    for (let row of rows) {\r\n        if (row.reference_doctype === \"Sales Invoice\" && row.reference_name) {\r\n\r\n            let r = await frappe.db.get_value(\r\n                \"Sales Invoice\",\r\n                row.reference_name,\r\n                \"custom_fees_type\"\r\n            );\r\n\r\n            frappe.model.set_value(\r\n                row.doctype,\r\n                row.name,\r\n                \"custom_fees_type\",\r\n                r.message.custom_fees_type || null\r\n            );\r\n        }\r\n    }\r\n}",
+  "view": "Form"
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Client Script",
+  "dt": "Student",
+  "enabled": 0,
+  "modified": "2026-02-23 21:55:16.303654",
+  "module": "School Management",
+  "name": "Auto-fill Guardian fields when “If Guardian Is” = Father/Mother",
+  "script": "frappe.ui.form.on(\"Student\", {\r\n  guardian_is(frm) {\r\n    if (frm.doc.guardian_is === \"Father\") {\r\n      frm.set_value(\"guardian_name\", frm.doc.father_name);\r\n      frm.set_value(\"guardian_phone\", frm.doc.father_phone);\r\n      frm.set_value(\"guardian_occupation\", frm.doc.father_occupation);\r\n      frm.set_value(\"guardian_relation\", \"Father\");\r\n    }\r\n\r\n    if (frm.doc.guardian_is === \"Mother\") {\r\n      frm.set_value(\"guardian_name\", frm.doc.mother_name);\r\n      frm.set_value(\"guardian_phone\", frm.doc.mother_phone);\r\n      frm.set_value(\"guardian_occupation\", frm.doc.mother_occupation);\r\n      frm.set_value(\"guardian_relation\", \"Mother\");\r\n    }\r\n  }\r\n});",
+  "view": "Form"
+ }
+]

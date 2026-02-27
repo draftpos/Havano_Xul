@@ -247,6 +247,29 @@ app_license = "mit"
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+fixtures = [
+    "Custom Field",
+    "Property Setter",
+    "Custom DocPerm",
+    "Client Script",
+    "Server Script",
+    "Report",
+    "Print Format",
+    "Workspace",
+    "Role",
+    "Workflow",
+    "Workflow State",
+    "Workflow Action Master",
+    "Notification",
+    "Email Template",
+    "Letter Head",
+    "Address Template",
+    "Terms and Conditions",
+    "Dashboard",
+    "Dashboard Chart",
+    "Number Card",
+]
+
 doc_events = {
     "Fees Type": {
         "after_insert": "school_management.fees_hooks.create_item"
