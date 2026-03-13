@@ -89,7 +89,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-09 12:39:39.455039",
   "module": "Manufacturing",
   "name": "Manufacturing"
@@ -143,7 +143,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-21 18:14:25.078929",
   "module": "Assets",
   "name": "Asset"
@@ -231,7 +231,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-22 13:07:34.540574",
   "module": "Accounts",
   "name": "Accounts"
@@ -319,7 +319,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-21 18:56:47.230053",
   "module": "CRM",
   "name": "CRM"
@@ -340,7 +340,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-22 17:17:03.780625",
   "module": "Projects",
   "name": "Project"
@@ -407,7 +407,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-22 15:31:22.299903",
   "module": "Selling",
   "name": "Selling"
@@ -474,7 +474,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 0,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-22 12:48:38.112744",
   "module": "Buying",
   "name": "Buying"
@@ -542,7 +542,7 @@
   "docstatus": 0,
   "doctype": "Dashboard",
   "is_default": 1,
-  "is_standard": 1,
+  "is_standard": 0,
   "modified": "2020-07-22 13:09:33.096694",
   "module": "Stock",
   "name": "Stock"
